@@ -10,7 +10,7 @@ REPO="https://github.com/SatzzDev/Lavalink"
 DIR="/opt/lavalink"
 JAR="Lavalink.jar"
 
-install_node() {
+install_node_full() {
   if command -v apt-get >/dev/null 2>&1; then
     curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
     apt-get install -y nodejs
@@ -48,11 +48,16 @@ if ! command -v java >/dev/null 2>&1; then
 fi
 
 if ! command -v node >/dev/null 2>&1; then
-  install_node
+  install_node_full
 fi
 
 if ! command -v npm >/dev/null 2>&1; then
-  install_node
+  install_node_full
+fi
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo "npm tetap tidak ditemukan, install Node.js gagal."
+  exit 1
 fi
 
 if ! command -v pm2 >/dev/null 2>&1; then
@@ -91,5 +96,5 @@ echo "Lavalink berjalan"
 echo "IP: $IP"
 echo "Port: ${PORT:-3100}"
 echo "PM2 name: lavalink"
-echo "Cek log: pm2 logs lavalink"
+echo "Log: pm2 logs lavalink"
 echo "========================================="
