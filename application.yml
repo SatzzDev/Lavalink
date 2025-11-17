@@ -1,16 +1,23 @@
 lavalink:
     plugins:
+        dunctebot:
+            sources:
+                clypit: true
+                getyarn: true
+                mixcloud: true
+                ocremix: true
+                pixeldrain: true
+                pornhub: true
+                reddit: true
+                soundgasm: true
+                tiktok: true
+                tts: true
+            ttsLanguage: en-AU
         lavasrc:
             applemusic:
                 albumLoadLimit: 6
                 countryCode: US
-                keyID: your key id
-                mediaAPIToken: your apple music api token
-                musicKitKey: "-----BEGIN PRIVATE KEY-----\nyour key\n-----END PRIVATE KEY-----      \n"
-                playlistLoadLimit: 6
-                teamID: your team id
             deezer:
-                arl: your deezer arl
                 formats:
                     - FLAC
                     - MP3_320
@@ -18,70 +25,32 @@ lavalink:
                     - MP3_128
                     - MP3_64
                     - AAC_64
-                masterDecryptionKey: your master decryption key
             flowerytts:
                 audioFormat: mp3
                 silence: 0
                 speed: 1
                 translate: false
                 voice: default voice
-            jiosaavn:
-                decryption:
-                    secretKey: ??
             lyrics-sources:
-                deezer: false
-                lrcLib: false
-                spotify: false
-                vkmusic: false
-                yandexmusic: false
                 youtube: false
             providers:
                 - ytsearch:"%ISRC%"
                 - ytsearch:%QUERY%
-            qobuz:
-                userOauthToken: your user oauth token
             sources:
-                applemusic: false
-                deezer: false
-                flowerytts: false
-                jiosaavn: false
-                qobuz: false
                 spotify: true
-                tidal: false
-                vkmusic: false
-                yandexmusic: false
                 youtube: true
-                ytdlp: false
             spotify:
                 albumLoadLimit: 6
                 clientId: 8db85e4cfce8433bb7f80ce366b3373d
                 clientSecret: 808decfe6312499699375bd4f9aea6df
                 countryCode: ID
                 customTokenEndpoint: http://localhost:8080/api/token
-                localFiles: false
                 playlistLoadLimit: 6
                 preferAnonymousToken: false
                 resolveArtistsInSearch: true
-            tidal:
-                countryCode: US
-                searchLimit: 6
-                token: your tidal token
-            vkmusic:
-                artistLoadLimit: 1
-                playlistLoadLimit: 1
-                recommendationsLoadLimit: 10
-                userToken: your user token
-            yandexmusic:
-                accessToken: your access token
-                albumLoadLimit: 1
-                artistLoadLimit: 1
-                playlistLoadLimit: 1
             youtube:
                 countryCode: ID
                 language: en
-            ytdlp:
-                path: yt-dlp
-                searchLimit: 10
     server:
         bufferDurationMs: 400
         filters:
@@ -97,7 +66,6 @@ lavalink:
             volume: true
         frameBufferDurationMs: 5000
         gc-warnings: true
-        nonAllocatingFrameBuffer: false
         opusEncodingQuality: 10
         password: SatzzDev
         playerUpdateInterval: 5
@@ -106,7 +74,6 @@ lavalink:
         sources:
             bandcamp: true
             http: true
-            local: false
             nico: true
             soundcloud: true
             twitch: true
@@ -133,20 +100,11 @@ logging:
     request:
         enabled: true
         includeClientInfo: true
-        includeHeaders: false
         includePayload: true
         includeQueryString: true
         maxPayloadLength: 10000
-metrics:
-    prometheus:
-        enabled: false
-        endpoint: /metrics
-plugins: null
-sentry:
-    dsn: ""
-    environment: ""
 server:
     address: 0.0.0.0
     http2:
         enabled: false
-    port: 80
+    port: 3886
