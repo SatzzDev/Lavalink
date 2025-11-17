@@ -3,24 +3,8 @@ lavalink:
         # Plugin dependencies
         - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.1"
           repository: "https://maven.lavalink.dev/releases"
-        - dependency: "com.dunctebot:skybot-lavalink-plugin:1.7.1"
-          repository: "https://maven.lavalink.dev/releases"
         
         # Plugin configurations
-        dunctebot:
-            sources:
-                clypit: true
-                getyarn: true
-                mixcloud: true
-                ocremix: true
-                pixeldrain: true
-                pornhub: true
-                reddit: true
-                soundgasm: true
-                tiktok: true
-                tts: true
-            ttsLanguage: en-AU
-        
         lavasrc:
             providers:
                 - "ytsearch:\"%ISRC%\""
