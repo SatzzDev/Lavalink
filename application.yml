@@ -31,7 +31,7 @@ lavalink:
       clientId: "fcd402f50a4b4e58a284de883ab5af7c"
       clientSecret: "30b02187fd6841c6976db5333e152300"
       # spDc: "your sp dc cookie" # the sp dc cookie used for accessing the spotify lyrics api
-      countryCode: "US" # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+      countryCode: "ID" # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
       playlistLoadLimit: 6 # The number of pages at 100 tracks each
       albumLoadLimit: 6 # The number of pages at 50 tracks each
       resolveArtistsInSearch: true # Whether to resolve artists in track search results (can be slow)
