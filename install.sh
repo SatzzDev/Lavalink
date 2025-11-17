@@ -10,6 +10,19 @@ REPO="https://github.com/SatzzDev/Lavalink"
 DIR="/opt/lavalink"
 JAR="Lavalink.jar"
 
+install_node() {
+  if command -v apt-get >/dev/null 2>&1; then
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+    apt-get install -y nodejs
+  elif command -v yum >/dev/null 2>&1; then
+    curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
+    yum install -y nodejs
+  else
+    echo "Install Node.js manual."
+    exit 1
+  fi
+}
+
 if ! command -v git >/dev/null 2>&1; then
   if command -v apt-get >/dev/null 2>&1; then
     apt-get update
@@ -32,6 +45,14 @@ if ! command -v java >/dev/null 2>&1; then
     echo "Install Java 17 manual."
     exit 1
   fi
+fi
+
+if ! command -v node >/dev/null 2>&1; then
+  install_node
+fi
+
+if ! command -v npm >/dev/null 2>&1; then
+  install_node
 fi
 
 if ! command -v pm2 >/dev/null 2>&1; then
@@ -66,9 +87,9 @@ IP=$(hostname -I | awk '{print $1}')
 PORT=$(grep -E "port:" application.yml | head -n 1 | awk '{print $2}')
 
 echo "========================================="
-echo "Lavalink berhasil dijalankan"
+echo "Lavalink berjalan"
 echo "IP: $IP"
 echo "Port: ${PORT:-3100}"
-echo "PM2 Name: lavalink"
-echo "Logs: pm2 logs lavalink"
+echo "PM2 name: lavalink"
+echo "Cek log: pm2 logs lavalink"
 echo "========================================="
