@@ -28,8 +28,8 @@ lavalink:
       lrcLib: false # Enable LRC Library lyrics source (https://lrclib.net)
     spotify:
       # clientId & clientSecret are required for using spsearch
-      clientId: "8db85e4cfce8433bb7f80ce366b3373d"
-      clientSecret: "808decfe6312499699375bd4f9aea6df"
+      clientId: "fcd402f50a4b4e58a284de883ab5af7c"
+      clientSecret: "30b02187fd6841c6976db5333e152300"
       # spDc: "your sp dc cookie" # the sp dc cookie used for accessing the spotify lyrics api
       countryCode: "US" # the country code you want to use for filtering the artists top tracks. See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
       playlistLoadLimit: 6 # The number of pages at 100 tracks each
