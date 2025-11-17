@@ -14,25 +14,6 @@ lavalink:
                 tts: true
             ttsLanguage: en-AU
         lavasrc:
-            applemusic:
-                albumLoadLimit: 6
-                countryCode: US
-            deezer:
-                formats:
-                    - FLAC
-                    - MP3_320
-                    - MP3_256
-                    - MP3_128
-                    - MP3_64
-                    - AAC_64
-            flowerytts:
-                audioFormat: mp3
-                silence: 0
-                speed: 1
-                translate: false
-                voice: default voice
-            lyrics-sources:
-                youtube: false
             providers:
                 - ytsearch:"%ISRC%"
                 - ytsearch:%QUERY%
@@ -44,13 +25,17 @@ lavalink:
                 clientId: 8db85e4cfce8433bb7f80ce366b3373d
                 clientSecret: 808decfe6312499699375bd4f9aea6df
                 countryCode: ID
+                resolveArtistsInSearch: true
+                localFiles: false
+                preferAnonymousToken: false
                 customTokenEndpoint: http://localhost:8080/api/token
                 playlistLoadLimit: 6
-                preferAnonymousToken: false
-                resolveArtistsInSearch: true
             youtube:
                 countryCode: ID
                 language: en
+            ytdlp:
+                path: "yt-dlp" # the path to the yt-dlp executable.
+                searchLimit: 10
     server:
         bufferDurationMs: 400
         filters:
